@@ -174,19 +174,6 @@ computeHighOrderDerivative ( int n, long double *x, long double *y, long double 
 	for ( int i = 0; i < order; ++i )
 		dNf /= deltaX;
 
-/*
-	long double *temp = (long double *) malloc ( sizeof(long double) * (order + 1) );
-	for ( int i = 0; i < order + 1; ++i )
-	{
-		getInterpolationResult( n, x, y, d, inputX - deltaX * i, &intrResult );
-		for ( int j = 0; j < order; ++j )
-			intrResult *= DIFFERENTIAL_INVERSE;
-		temp[i] = intrResult;
-	}
-	for ( int i = 0; i < order + 1; ++i )
-		dNf += coefficentTable[order - 1][i] * temp[i];
-*/
-
 	*derivative = dNf;
 }
 
